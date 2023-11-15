@@ -1,0 +1,133 @@
+
+body {
+  height: 100vh;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background:rgba(255, 255, 255, 0.87);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#up-page{
+  height: 20%;
+  color: #d4d6cf;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ background-color:  rgba(255, 255, 255, 0.87);
+}
+#figure {
+  display: flex;
+  flex-direction: row;
+  align-items: initial;
+  width: 35%;
+  border-right: 60px solid transparent;
+  border-top: 80px solid #0d7377;
+}
+img{
+  height: 70px;
+ 
+}
+#logo{
+  padding-right: 20px;
+}
+h2{
+  color: #5e6969;
+  padding-right: 30px;
+}
+h1{
+  color: #5e6969;
+ font-size: 100%;
+ 
+}
+footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: end;
+  gap: 7px;
+  
+}
+#azul{
+  
+  width: 150px; 
+  height: 100px; 
+  background:#0d7377;
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -ms-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  transform: skew(-20deg);
+ 
+}
+#gris{
+  width: 15%;
+  width: 150px; 
+  height: 100px; 
+  background:#5e6969;
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -ms-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  transform: skew(-20deg); 
+}
+#azul1{
+  
+  width: 250px; 
+  height: 80px; 
+  background:#0d7377;
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -ms-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  transform: skew(-20deg);
+}
+
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    padding: 1% 15%;
+    padding-bottom: 5%;
+  }
+ 
+  .table1{
+    padding: 5% 2% 4% 2%;
+  }
+  .table1 thead th{
+    padding: 1%;
+    background-color:  #0d7377;
+  }
+  .table1 thead th:empty{
+    background:transparent;
+    border:none;
+  }
+  .table1 tbody td{
+   
+    text-align:center;
+    background-color:#d3d9e4af;
+    color:#555454;
+  }
+  .student {
+    display: flex;
+    padding-top: 3%;
+    text-align: initial;
+    color:#757474;
+    padding-right: 20px;
+  }
+  input { 
+    border: none;
+    padding: 10% 0;
+    text-align:center;
+    background-color:#d3d9e4af;
+    color:#555454;
+  }
+  .btn-registrar{
+    background-color:  #0d7377;
+    border-radius: 10px;
+    padding: 10px;
+  } 

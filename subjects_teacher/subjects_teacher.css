@@ -1,0 +1,130 @@
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background: rgba(255, 255, 255, 0.87);
+}
+p{
+  color: #5e6969;
+  font-size: 50px ;
+}
+#up-page{
+  height: 20%;
+  color: #d4d6cf;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ background-color:  rgba(255, 255, 255, 0.87);
+}
+#figure {
+  display: flex;
+  flex-direction: row;
+  align-items: initial;
+  width: 35%;
+  border-right: 60px solid transparent;
+  border-top: 80px solid #0d7377;
+}
+img{
+  height: 70px;
+ 
+}
+#logo{
+  padding-right: 20px;
+}
+h2{
+  color: #5e6969;
+  padding-right: 30px;
+}
+h1{
+ font-size: 100%;
+ color: #5e6969
+}
+
+#elementsBody {
+  display: flex;
+  flex-direction: row;
+
+}
+#content_SC{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#newBtn {
+  padding: 5%;
+  background-color: #0d7377;
+}
+#newBtnCourse {
+  padding: 5%;
+  gap: 30px;
+
+  background-color: #5e6969;
+}
+#courses-btn {
+  gap: 30px;
+  padding: 10% 19%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+ 
+}
+#courses-btn img{
+  width: 100%;
+  height: 100%;
+}
+
+#contenedorbtns {
+  
+  background-color: #5e6969;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+  padding: 10% 1%;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: end;
+  gap: 7px;
+}
+#azul {
+  width: 150px;
+  height: 100px;
+  background: #0d7377;
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -ms-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  transform: skew(-20deg);
+}
+#gris {
+  width: 15%;
+  width: 150px;
+  height: 100px;
+  background: #5e6969;
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -ms-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  transform: skew(-20deg);
+}
+#azul1 {
+  width: 250px;
+  height: 80px;
+  background: #0d7377;
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -ms-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  transform: skew(-20deg);
+}
