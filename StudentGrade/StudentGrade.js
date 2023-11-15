@@ -17,7 +17,7 @@ async function infoStudentsForNote() {
   let infoForNotes = "http://localhost:3000/teachers/grades";
   let info = await fetch(infoForNotes);
   let infojs = await info.json();
-  console.log(infojs);
+  
   return infojs;
 }
 
@@ -28,13 +28,13 @@ let course = storedData.courseID
 infoStudentsForNote().then((infojs) => {
   infojs.forEach((student) => {
     if ((student.courseid == course)) {
-      console.log(student.courseid)
+     
       // Crea una nueva fila
       let row = document.createElement("tr");
 
       // Crea y agrega las celdas a la fila
       let nameCell = document.createElement("td");
-      nameCell.innerHTML = `<span type="text" class="studentName" value="${student.user_studentid}" >${student.user_student.name_student + " "+ student.user_student.last_name}</>`
+      nameCell.innerHTML = `<p type="text" class="studentName" title="${student.user_studentid}" >${student.user_student.name_student + " "+ student.user_student.last_name}</>`
       //nameCell.innerHTML = `<span type="text" class="studentName" value="${student.user_studentid}" >${student.user_studentid}</>`
       row.appendChild(nameCell);
 
@@ -60,4 +60,65 @@ infoStudentsForNote().then((infojs) => {
       }
     }
   });
+});
+
+// -------------- EVENTO LISTENER -------------------//
+saveChangesButton.addEventListener('click', async function () {
+  // Recupera las filas de la tabla
+  let rows = studentsBody.getElementsByTagName("tr");
+
+  // Crea un objeto para almacenar los datos de los estudiantes
+  let studentData = [];
+
+  // Recorre cada fila de la tabla
+  for (let i = 0; i < rows.length; i++) {
+    let row = rows[i];
+
+    // Obtiene las celdas de la fila
+    let cells = row.getElementsByTagName("td");
+
+    // Obtiene el nombre del estudiante y las calificaciones
+    let studentName = cells[0].getElementsByTagName("p")[0].title;
+    
+    let grade1 = cells[1].getElementsByTagName("input")[0].value;
+    let grade2 = cells[2].getElementsByTagName("input")[0].value;
+    let grade3 = cells[3].getElementsByTagName("input")[0].value;
+
+    // Crea un objeto con la información del estudiante
+    let studentObj = {
+      studentid: studentName,
+      grades:{
+        first_period: grade1,
+        second_period: grade2,
+        third_period: grade3},
+    };
+
+    // Agrega el objeto al array
+    studentData.push(studentObj);
+  }
+
+  // Almacena el objeto en el localStorage
+  localStorage.setItem("studentData", JSON.stringify(studentData));
+
+// Enviar datos al backend
+try {
+  const response = await fetch('https://localhost:3000/teacher/registerGrade', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(studentData),
+  });
+
+  if (response.ok) {
+    console.log('Calificaciones enviadas correctamente al backend.');
+  } else {
+    console.error('Error al enviar las calificaciones al backend:', response.statusText);
+  }
+} catch (error) {
+  console.error('Error de red al enviar las calificaciones al backend:', error);
+}
+  // Otra lógica que desees realizar con los datos guardados...
+  console.log(studentData)
+  console.log("Cambios guardados correctamente.");
 });
